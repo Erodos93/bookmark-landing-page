@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Bookmark landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
+</head>
+
+<body>
+  <section id="nav-section">
+    <div class="nav">
+      <div class="logo">
+        <img src="images/logo-bookmark.svg" />
+      </div>
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="#"> Features</a>
+        </li>
+        <li class="menu-item">
+          <a href="#"> Pricing</a>
+        </li>
+        <li class="menu-item">
+          <a href="#"> Contact</a>
+        </li>
+        <li class="button-login">
+          <a href="#">Login</a>
+        </li>
+      </ul>
+
+    </div>
+
+
+
+  </section>
+  <section id="content-describe">
+
+    <div class="description">
+      <h1 class="big-heading">A Simple Bookmark Manager</h1>
+      <p>
+        A clean and simple interface to organize your favourite<br /> websites. Open a new
+        browser tab and see your sites load <br /> instantly. Try it for free.
+      </p>
+      <div class="button-get">
+        <button id="getChrome" class="get">Get it on Chrome</button>
+        <button id="getFirefox" class="get">Get it on Firefox</button>
+      </div>
+    </div>
+    <div class="illustration">
+      <img class="img-hero" src="images\illustration-hero.svg" />
+
+
+    </div>
+    <div id="right-shadow"></div>
+
+
+  </section>
+  <section id="features">
+    <div class="feature-content">
+      <h1>Features</h1>
+      <p>
+        Our aim is to make it quick and easy for you to access your<br />
+        favourite websites.Your bookmarks sync between your devices<br />
+        so you can access them on the go.
+      </p>
+    </div>
+
+
+    <div id="feature-tab">
+      <ul id="tabs">
+        <li class="nav-link active-tab" onclick="changeTab(event, 'bookmark')">
+          <a>Simple Bookmarking</a>
+        </li>
+        <li class="nav-link" onclick="changeTab(event, 'search')">
+          <a>Speedy Searching</a>
+        </li>
+        <li class="nav-link" onclick="changeTab(event, 'share')">
+          <a>Easy Sharing</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="card" id="bookmark">
+      <div>
+        <img class="img-card" src="images\illustration-features-tab-1.svg" />
+
+        <div id="left-shadow"></div>
+      </div>
+
+
+      <div class="describe-card">
+        <h1>Bookmark in one click</h1>
+        <p>
+          Organize your bookmarks however you like. Our<br />
+          simple drag-and-drop interface gives you complete<br />
+          control over how you manage your favourite sites.
+
+        </p>
+        <button class="info">More Info</button>
+      </div>
+    </div>
+    <div class="card" id="search">
+      <div>
+        <img class="img-card" src="images\illustration-features-tab-2.svg" />
+
+        <div id="left-shadow"></div>
+      </div>
+
+
+      <div class="describe-card">
+        <h1>Intelligent search</h1>
+        <p>
+          Our powerful search feature will help you find <br />
+          saved sites in no time at all. No need to trawl through<br />
+          all of your bookmarks.
+        </p>
+        <button class="info">More Info</button>
+      </div>
+
+    </div>
+    <div class="card" id="share">
+      <div>
+        <img class="img-card" src="images\illustration-features-tab-3.svg" />
+
+        <div id="left-shadow"></div>
+      </div>
+
+
+      <div class="describe-card">
+        <h1>Share your bookmarks</h1>
+        <p>
+          Easily share your bookmarks and collections with others.<br />
+          Create a shareable link that you can send at the <br />click of a button.
+
+        </p>
+        <button class="info">More Info</button>
+      </div>
+
+    </div>
+  </section>
+  <section id="extension">
+    <div class="feature-content">
+      <h1>Download the extension</h1>
+      <p>
+        We’ve got more browsers in the pipeline. Please do let us <br />
+        know if you’vegot a favourite you’d like us to prioritize.
+      </p>
+    </div>
+    <div id="addItems">
+      <div class="item">
+        <div class="body-extension">
+          <img src="images\logo-chrome.svg" />
+          <h2> Add to Chrome</h2>
+          <p>
+            Minimum version 62
+          </p>
+        </div>
+        <button class="extension-button"> Add & Install Extension</button>
+      </div>
+
+      <div class="item">
+        <div class="body-extension">
+          <img src="images\logo-firefox.svg" />
+          <h2> Add to Firefox</h2>
+          <p>
+            Minimum version 55
+          </p>
+        </div>
+
+
+
+
+        <button class="extension-button"> Add & Install Extension</button>
+      </div>
+      <div class="item">
+        <div class="body-extension">
+          <img src="images\logo-opera.svg" />
+          <h2> Add to Opera</h2>
+          <p>
+            Minimum version 46
+          </p>
+        </div>
+        <button class="extension-button"> Add & Install Extension</button>
+      </div>
+    </div>
+
+
+  </section>
+  <section id="question-section">
+    <div class="feature-content">
+      <h1>Download the extension</h1>
+      <p>
+        We’ve got more browsers in the pipeline. Please do let us <br />
+        know if you’vegot a favourite you’d like us to prioritize.
+      </p>
+    </div>
+    <div class="info-table">
+      <ul>
+        <li class="question" onclick="openAnswer('q1','arrow-1')"> <a>What is Bookmark?</a> <img id="arrow-1" src="images\icon-arrow.svg" alt=""></li>
+        <div class="answer" id="q1">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+            justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+          </p>
+        </div>
+        <li class="question" onclick="openAnswer('q2','arrow-2')"> <a>How can I request a new browser?</a> <img id="arrow-2" src="images\icon-arrow.svg" alt=""></li>
+        <div class="answer" id="q2">
+          <p>
+            Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+            Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+            ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+            Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+
+          </p>
+        </div>
+        <li class="question" onclick="openAnswer('q3','arrow-3')"> <a>Is there a mobile app?</a> <img id="arrow-3" src="images\icon-arrow.svg" alt=""></li>
+        <div class="answer" id="q3">
+          <p>
+            Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
+            urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
+            sollicitudin ex et ultricies bibendum.
+          </p>
+        </div>
+        <li class="question"id="lastQuestion" onclick="openAnswer('q4','arrow-4')"> <a>What about other Chromium browsers?</a> <img id="arrow-4" src="images\icon-arrow.svg" alt=""> </li>
+        <div class="answer" id="q4">
+          <p>
+            Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
+            vitae neque eget nisl gravida pellentesque non ut velit.
+          </p>
+        </div>
+      </ul>
+      <button class="info">More Info</button>
+    </div>
+  </section>
+  <section id="contact">
+
+    <p>35,000+ already joined</p>
+    <h1>Stay up-to-date with what we’re doing</h1>
+
+
+    <form class="form" action="index.html" method="post">
+      <input id="input" type="email" name="inputEmail" value="">
+      <button class="button-contact" type="button" name="button" onclick="contactUs()">Contact Us</button>
+    </form>
+
+    <p id="wrong">Whoops, make sure it's an email <img id="error" src="images\icon-error.svg" /></p>
+
+
+
+
+    <div class="footer-nav">
+      <ul class="menu">
+        <li> Features</li>
+        <li>Pricing</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+
+</body>
+<script src="index.js"></script>
+
+</html>
