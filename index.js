@@ -11,7 +11,7 @@ function changeTab(evt, tabName) {
   document.getElementById(tabName).style.display = "flex";
   evt.currentTarget.className += " active-tab";
 }
-
+//Function open Answer to Question
 function openAnswer( answer,close) {
 
 document.getElementById(answer).classList.toggle("show");
@@ -30,6 +30,7 @@ if (isOpen) {
 }
 
 }
+//Function control true/false email
 function contactUs(){
 
 arr.forEach(function(equale){
@@ -42,32 +43,46 @@ document.getElementById("input").style.border=" solid 2px red";
 })
 
 }
+//Function to Login
 function login(){
   if(!arr.includes(value)){
     alert("push");
       arr.push(value);
   }
 }
-//***************************************************
+//Function onLoad
+function startLoaded(){
+  var i, extension, margin,question,lastQuestion;
 
-var i, extension, margin,question,lastQuestion;
-const arr=["michal.horcicka19@gmail.com","ultigamer12@gmail.com"];
+  const arr=["michal.horcicka19@gmail.com","ultigamer12@gmail.com"];
+  const value=document.getElementById("input").value;
+  extension = document.getElementsByClassName("item");
+  question=document.getElementsByClassName("question");
+  margin = 0;
+  for (i = 1; i < extension.length; i++) {
+    margin += 50;
+    extension[i].style.top = margin + "px";
+  }
+  for (var i = 0; i < question.length; i++) {
 
-const value=document.getElementById("input").value;
-extension = document.getElementsByClassName("item");
-question=document.getElementsByClassName("question");
-margin = 0;
-for (i = 1; i < extension.length; i++) {
-  margin += 50;
-  extension[i].style.top = margin + "px";
+
+    if(i===3){
+
+      question[i].style.borderBottom="3px solid #d6d6d6";
+    }
+  }
+
+  document.getElementById("bookmark").style.display = "flex";
+
 }
-for (var i = 0; i < question.length; i++) {
-
-
-  if(i===3){
-
-    question[i].style.borderBottom="3px solid #d6d6d6";
+//Function change menu to extend button
+function changeToMobile(){
+  var widthDisplay;
+  widthDisplay=document.getElementsByClassName("menu")[0];
+  if (widthDisplay.className==="menu" ) {
+    widthDisplay.className+="response";
+  } else {
+    widthDisplay.className=="menu";
   }
 }
-
-document.getElementById("bookmark").style.display = "flex";
+//***************************************************
