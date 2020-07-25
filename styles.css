@@ -19,7 +19,7 @@ h1 {
   }
 
   .logo {
-    margin: 10px;
+    margin-top: 10px;
   }
 
   .menu {
@@ -33,18 +33,45 @@ h1 {
     text-decoration: none;
   }
 
+  .background-menu {
+    position: absolute;
+    z-index: 3;
+    background-color: hsl(229, 31%, 21%);
+    width: 365px;
+    height: 500%;
+    opacity: 0.9;
+  }
+
   .responsive-menu {
     display: flex;
     flex-flow: column nowrap;
-    display: none;
-    position: absolute;
-    z-index: 3;
-    opacity: 0.8;
-    width: 365px;
-    height: 500%;
-    background-color: blue;
+    /* display: none; */
+    margin: 40px;
   }
 
+  .responsive-menu>a {
+    justify-content: space-around;
+    padding: 20px;
+    border-bottom: solid hsl(229, 8%, 60%) 2px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .logo {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: solid hsl(229, 8%, 60%) 2px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+#button-login{
+  margin-top: 25px;
+padding: 15px 50px;
+  border: solid white 2px;
+}
   /* .menu>li {
     margin: 5px;
     padding: 5px 15px 0 15px;
