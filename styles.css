@@ -4,14 +4,13 @@ body {
   font-family: Rubik;
   color: hsl(229, 8%, 60%);
   height: auto;
-
 }
+
 h1 {
   color: black;
 }
+
 @media screen and (max-width:375px) {
-
-
   #nav {
     display: flex;
     flex-direction: row;
@@ -33,16 +32,19 @@ h1 {
     cursor: pointer;
     text-decoration: none;
   }
-.responsive-menu{
-  display: none;
-position: absolute;
-z-index: 3;
-opacity: 0.8;
-width: 365px;
-height: 500%;
-  background-color: blue;
 
-}
+  .responsive-menu {
+    display: flex;
+    flex-flow: column nowrap;
+    display: none;
+    position: absolute;
+    z-index: 3;
+    opacity: 0.8;
+    width: 365px;
+    height: 500%;
+    background-color: blue;
+  }
+
   /* .menu>li {
     margin: 5px;
     padding: 5px 15px 0 15px;
@@ -73,7 +75,7 @@ height: 500%;
   .illustration {
     z-index: 2;
     width: 100%;
-      margin-bottom: 45px;
+    margin-bottom: 45px;
   }
 
   .img-hero {
@@ -89,7 +91,6 @@ height: 500%;
     z-index: 1;
     left: 56px;
     top: 160px;
-
     border-radius: 0 0 0 100px;
   }
 
@@ -102,6 +103,7 @@ height: 500%;
   .big-heading {
     font-size: 30px;
   }
+
   button {
     transition: 0.3s;
     cursor: pointer;
@@ -133,7 +135,6 @@ height: 500%;
     border: solid 2px hsl(229, 8%, 95%);
     background-color: hsl(229, 8%, 95%);
   }
-
 }
 
 @media screen and (min-width:375px) {
