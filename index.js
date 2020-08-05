@@ -3,6 +3,17 @@ function changeTab(evt, tabName) {
   tabContent = document.getElementsByClassName("card");
   for (i = 0; i < tabContent.length; i++) {
     tabContent[i].style.display = "none";
+
+    // alert(document.getElementById("left-shadow").style.width="285px");
+    // if(  evt.currentTarget.className==="active-tab" && i>0){
+
+    // }
+
+
+
+    // if (i>0) {
+    //   tabContent[i].childNodes[2].style.width = 285 +"px";
+    // }
   }
   tabLink = document.getElementsByClassName("nav-link");
   for (i = 0; i < tabLink.length; i++) {
@@ -10,23 +21,30 @@ function changeTab(evt, tabName) {
   }
   document.getElementById(tabName).style.display = "flex";
   evt.currentTarget.className += " active-tab";
+  if (tabName==="search" || tabName==="share") {
+  document.getElementById(tabName).childNodes[3].style.width="258px";
+  document.getElementById(tabName).childNodes[3].style.top="1360px";
+  }
 }
 //Function open Answer to Question
-function openAnswer( answer,close) {
+function openAnswer( evt,answer,close) {
 
 document.getElementById(answer).classList.toggle("show");
 let isOpen=document.getElementById(answer).classList.contains("show");
 
 if (isOpen) {
   document.getElementById(close).src='./images/icon-close.png';
- if(answer=='q4'){
-     document.getElementById("lastQuestion").style.borderBottom="none";
- }
+
+ // if(answer=='q4'){
+evt.currentTarget.style.borderBottom="none";
+    document.getElementById(answer).style.borderBottom="1px solid #d6d6d6";
+ // }
 } else {
   document.getElementById(close).src='./images/icon-arrow.svg';
-  if(answer=='q4'){
-      document.getElementById("lastQuestion").style.borderBottom="3px solid #d6d6d6";
-  }
+evt.currentTarget.style.borderBottom="1px solid #d6d6d6";
+  // if(answer=='q4'){
+  //     document.getElementById("lastQuestion").style.borderBottom="1px solid #d6d6d6";
+  // }
 }
 
 }
@@ -68,7 +86,7 @@ function startLoaded(){
 
     if(i===3){
 
-      question[i].style.borderBottom="3px solid #d6d6d6";
+      question[i].style.borderBottom="1px solid #d6d6d6";
     }
   }
 
