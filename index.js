@@ -1,31 +1,44 @@
 function changeTab(evt, tabName) {
   let i, tabContent, tabLink;
+
   tabContent = document.getElementsByClassName("card");
+  NodeList.prototype.forEach = Array.prototype.forEach;
+  var children = document.getElementById(tabName).parentNode.childNodes;
+
   for (i = 0; i < tabContent.length; i++) {
     tabContent[i].style.display = "none";
 
-    // alert(document.getElementById("left-shadow").style.width="285px");
-    // if(  evt.currentTarget.className==="active-tab" && i>0){
 
-    // }
-
-
-
-    // if (i>0) {
-    //   tabContent[i].childNodes[2].style.width = 285 +"px";
-    // }
   }
   tabLink = document.getElementsByClassName("nav-link");
   for (i = 0; i < tabLink.length; i++) {
     tabLink[i].className = tabLink[i].className.replace("active-tab", "");
+
   }
   document.getElementById(tabName).style.display = "flex";
+
+
   evt.currentTarget.className += " active-tab";
   if (tabName==="search" || tabName==="share") {
-  document.getElementById(tabName).childNodes[3].style.width="258px";
-  document.getElementById(tabName).childNodes[3].style.top="1360px";
+    children.forEach(function(item){
+      if (tabName===item.id) {
+
+      if (window.innerWidth>=375) {
+        item.children[0].children[0].style.left="22%";
+        item.children[0].children[0].style.bottom="3rem";
+
+      }else{
+        item.children[0].children[0].style.left="12rem";
+        item.children[0].children[0].style.bottom="4rem";
+
+      }
+      }
+
+    })
+
   }
 }
+
 //Function open Answer to Question
 function openAnswer( evt,answer,close) {
 
@@ -42,9 +55,7 @@ evt.currentTarget.style.borderBottom="none";
 } else {
   document.getElementById(close).src='./images/icon-arrow.svg';
 evt.currentTarget.style.borderBottom="1px solid #d6d6d6";
-  // if(answer=='q4'){
-  //     document.getElementById("lastQuestion").style.borderBottom="1px solid #d6d6d6";
-  // }
+
 }
 
 }
@@ -103,4 +114,26 @@ function changeToMobile(){
     widthDisplay.className=="menu";
   }
 }
+function openMobileMenu(){
+  var backgroundMenu,navMenu;
+  backgroundMenu=document.getElementById("background-menu");
+backgroundMenu.style.display="block";
+navMenu=document.getElementById("nav");
+navMenu.style.display="none";
+}
+function closeMobileMenu(){
+  var backgroundMenu;
+  backgroundMenu=document.getElementById("background-menu");
+
+  if (window.innerWidth>=1130) {
+    backgroundMenu.style.display="none";
+  }
+}
 //***************************************************
+function exit(){
+  var exitBackgroundMenu,navMenu;
+  exitBackgroundMenu=document.getElementById("background-menu");
+  navMenu=document.getElementById("nav");
+  exitBackgroundMenu.style.display="none";
+  navMenu.style.display="flex";
+}

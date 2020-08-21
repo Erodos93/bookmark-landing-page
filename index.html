@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width,initial-scale=1"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
@@ -19,19 +19,19 @@
 
 <body onload="startLoaded()">
   <div id="background">
-    <div class="background-menu">
+    <div id="background-menu">
       <div class="responsive-menu">
         <div class="logo-menu">
-          <img src="images/logo-bookmark.svg" />
-          <i id="exit">x</i>
+          <img class="logo" src="images/logo-background-menu.svg" />
+          <a id="exit" onclick="exit()">x</a>
         </div>
-        <a href="#"> Features</a>
+        <a href="#features" onclick="exit()"> Features</a>
 
 
-        <a href="#"> Pricing</a>
+        <a href="#extension" onclick="exit()"> Pricing</a>
 
 
-        <a href="#"> Contact</a>
+        <a href="#contact" onclick="exit()"> Contact</a>
 
 
         <a id="button-login" href="#">Login</a>
@@ -42,29 +42,31 @@
     </div>
 
     <section id="nav-section">
+        <img class="logo" src="images/logo-bookmark.svg" />
       <div id="nav" onload="extendButton()">
 
-          <img class="logo" src="images/logo-bookmark.svg" />
 
-        <ul class="menu">
-          <li class="menu-item">
-            <a href="#"> Features</a>
-          </li>
-          <li class="menu-item">
-            <a href="#"> Pricing</a>
-          </li>
-          <li class="menu-item">
-            <a href="#"> Contact</a>
-          </li>
-          <li class="button-login">
-            <a href="#">Login</a>
-          </li>
 
-        </ul>
-        <a id="response" href="javascript:void(0);">☰</a>
+        <!-- <ul class="menu"> -->
+        <!-- <li class="menu-item"> -->
+        <a href="#features"> Features</a>
+        <!-- </li> -->
+        <!-- <li class="menu-item"> -->
+        <a href="#extension"> Pricing</a>
+        <!-- </li> -->
+        <!-- <li class="menu-item"> -->
+        <a href="#contact"> Contact</a>
+        <!-- </li> -->
+        <!-- <li class="button-login"> -->
+        <a class="button-login">Login</a>
+        <!-- </li> -->
+
+        <!-- </ul> -->
+
+
 
       </div>
-
+  <div id="response" onclick=" openMobileMenu()">☰</div>
 
 
     </section>
@@ -72,7 +74,7 @@
 
       <div class="describe-card">
 
-        <p class="big-heading">A Simple Bookmark Manager</p>
+        <h1 class="big-heading">A Simple Bookmark Manager</h1>
         <p class="describe-text">
           A clean and simple interface to organize your favourite websites. Open a new
           browser tab and see your sites load instantly. Try it for free.
@@ -82,12 +84,10 @@
           <button id="getFirefox" class="get">Get it on Firefox</button>
         </div>
       </div>
-      <div class="illustration">
-        <img class="img" src="images\illustration-hero.svg" />
+
+      <div id="right-shadow"><img class="img" src="images\illustration-hero.svg" /></div>
 
 
-      </div>
-      <div id="right-shadow"></div>
 
 
     </section>
@@ -104,39 +104,32 @@
 
 
       <div id="feature-tab">
-        <!-- <div id="background-tab"> -->
+
         <div id="tabs">
-          <!-- <li class="nav-link active-tab" onclick="changeTab(event, 'bookmark')"> -->
+
           <a class="nav-link active-tab" onclick="changeTab(event, 'bookmark')">Simple Bookmarking</a>
-          <!-- </li> -->
-          <!-- <li class="nav-link" onclick="changeTab(event, 'search')"> -->
+
           <a class="nav-link " onclick="changeTab(event, 'search')">Speedy Searching</a>
-          <!-- </li> -->
-          <!-- <li class="nav-link" onclick="changeTab(event, 'share')"> -->
-          <a class="nav-link last-link" onclick="changeTab(event, 'share')">Easy Sharing</a>
-          <!-- </li> -->
+
+          <a class="nav-link " onclick="changeTab(event, 'share')">Easy Sharing</a>
+
 
         </div>
-        <!-- </div> -->
+
 
       </div>
+    </section>
+    <section id="card-section">
       <div class="card" id="bookmark">
-        <div id="left-shadow"></div>
-      <img class="img" src="images\illustration-features-tab-1.svg" />
-
-
-
-
-
-
+        <div id="left-shadow"><img class="img-card" src="images\illustration-features-tab-1.svg" /></div>
 
         <div class="describe-card">
           <h1 class="big-heading">Bookmark in one click</h1>
-          <p class="describe-text">
+          <p class="card-text">
             Organize your bookmarks however you like.
             Our simple drag-and-drop interface gives
-             you complete control over how you manage
-              your favourite sites.
+            you complete control over how you manage
+            your favourite sites.
 
           </p>
           <button class="info">More Info</button>
@@ -144,15 +137,15 @@
       </div>
       <div class="card" id="search">
 
-        <img class="img" src="images\illustration-features-tab-2.svg" />
-  <div id="left-shadow"></div>
+
+        <div id="left-shadow"> <img class="img-card" src="images\illustration-features-tab-2.svg" /></div>
 
 
 
 
         <div class="describe-card">
           <h1 class="big-heading">Intelligent search</h1>
-          <p class="describe-text">
+          <p class="card-text">
             Our powerful search feature will help you find
             saved sites in no time at all. No need to trawl through
             all of your bookmarks.
@@ -163,15 +156,15 @@
       </div>
       <div class="card" id="share">
 
-        <img class="img" src="images\illustration-features-tab-3.svg" />
 
-        <div id="left-shadow"></div>
+
+        <div id="left-shadow"> <img class="img-card" src="images\illustration-features-tab-3.svg" /></div>
 
 
 
         <div class="describe-card">
           <h1 class="big-heading">Share your bookmarks</h1>
-          <p class="describe-text">
+          <p class="card-text">
             Easily share your bookmarks and collections with others.
             Create a shareable link that you can send at the click of a button.
 
@@ -181,6 +174,8 @@
 
       </div>
     </section>
+
+
     <section id="extension">
       <div class="describe-card">
         <h1 class="big-heading">Download the extension</h1>
@@ -230,11 +225,10 @@
 
     </section>
     <section id="question-section">
-      <div   class="describe-card">
+      <div class="describe-card">
         <h1 class="big-heading">Frequenly Asked Questions</h1>
         <p class="describe-text">
-          We’ve got more browsers in the pipeline. Please do let us
-          know if you’vegot a favourite you’d like us to prioritize.
+          Here are some of our FAQs.If you have any other questions you´d like answered please feel free to email us.
         </p>
       </div>
       <div class="info-table">
@@ -292,7 +286,7 @@
 
 
     <form class="form" action="index.html" method="post">
-      <input id="input" type="email" name="inputEmail" value="">
+      <input id="input" type="email" name="inputEmail" value="Enter your email addres" onclick="">
       <button class="button-contact" type="button" name="button" onclick="contactUs()">Contact Us</button>
     </form>
 
@@ -301,18 +295,46 @@
 
 
 
-    <div class="footer-nav">
-      <ul class="menu">
-        <li> Features</li>
-        <li>Pricing</li>
-        <li>Contact</li>
-      </ul>
+    <div class="nav">
+
+
+
+  <img class="logo" src="images/logo-bookmark-footer.svg" />
+
+
+
+<nav class="footer-nav">
+  <a href="#features"> Features</a>
+
+
+  <a href="#extension"> Pricing</a>
+
+
+  <a href="#contact"> Contact</a>
+</nav>
+
+
+
+    <div id="social-button">
+      <img  src="images/icon-facebook.svg" />
+        <img src="images/icon-twitter.svg" />
     </div>
 
+
+
+
+
+
+        </ul>
+
+      </ul>
+
+
+
+    </div>
+
+
   </section>
-
-
-
 
 
 
